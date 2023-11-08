@@ -17,20 +17,11 @@ int main(int argc, char *argv[])
     isNegative = 0;
     j = 23;
 
-    while (binaryString[length] != '\0')
-    {
-        if (length == 0 && binaryString[length] == '1')
-        {
-            isNegative = 1;
-        }
-        length++;
-    }
-
     decimalValue = 0;
     power = 0.0;
 
 
-    for (i = length - 1; i > 0; i--)
+    for (i = 31; i > 0; i--)
     {
         if (i>8)
         {
