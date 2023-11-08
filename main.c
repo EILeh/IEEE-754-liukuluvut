@@ -11,18 +11,20 @@ int main(int argc, char *argv[])
     double power;
     int i;
     int j;
-    int k;
+    double k;
     int exponent;
+    double a;
 
     binaryString = argv[1];
     length = 0;
     isNegative = 0;
     j = 23;
-    k = 10;
+    k = 0.0;
     exponent = 0;
 
     decimalValue = 0;
     power = 0.0;
+    a = 0;
 
 
     for (i = 31; i > 0; i--)
@@ -67,13 +69,17 @@ int main(int argc, char *argv[])
     if (exponent < 0)
     {
 
-        printf("-");
+        printf("-\n");
     }
     else
     {
-        printf("+");
+        printf("+\n");
     }
 
+    a = pow(2, exponent);
+    k = exponent*(power+1)*a;
+
+    printf("%0.15f\n", k);
 
 
     return 0;
