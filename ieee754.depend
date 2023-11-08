@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1699460517 source:c:\users\elli\documents\yliopisto\2. vuosi\2023-2024\1.-2. periodi\ohjelmoinnin tekniikka c\osa 2\ieee-754-liukuluvut\main.c
+1699467529 source:c:\users\elli\documents\yliopisto\2. vuosi\2023-2024\1.-2. periodi\ohjelmoinnin tekniikka c\osa 2\ieee-754-liukuluvut\main.c
 	<stdio.h>
 	<stdlib.h>
+	<math.h>
 

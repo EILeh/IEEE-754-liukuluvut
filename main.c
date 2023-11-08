@@ -1,33 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main(int argc, char *argv[])
 {
-    int decimal;
-    int weight;
+    char *binaryString;
+    int length;
+    int isNegative;
+    int decimalValue;
+    double power;
     int i;
-    char binary[32];
-    int rem;
-    int result;
+    int j;
 
-    decimal = 0;
-    weight = 1;
+    binaryString = argv[1];
+    length = 0;
+    isNegative = 0;
+    j = 23;
 
-
-    for (i = 0; binary[i] != '\0'; i++)
+    while (binaryString[length] != '\0')
     {
-        result = result * 10 + (binary[i] - '0');
+        if (length == 0 && binaryString[length] == '1')
+        {
+            isNegative = 1;
+        }
+        length++;
     }
+
+    decimalValue = 0;
+    power = 0.0;
+
+
+    for (i = length - 1; i > 0; i--)
+    {
+        if (i>8)
+        {
+            if (binaryString[i] == '1')
+            {
+                /*decimalValue += power;*/
+                power += pow((0.5), j);
+
+            }
+
+        }
+        j--;
+
+    }
+
+    /*
 
     while (result != 0)
     {
         rem = result % 10;
-        decimal += rem*weight;
-        result = result/10;
-        weight = weight * 2;
-    }
+        if (j <= 23)
+        {
+            decimal += rem*weight;
+        }
 
-    printf("%d", decimal);
+        result = result/10;
+        weight = weight * (1/2);
+        j++;
+    }
+    */
+
+    printf("%0.15f", power + 1);
 
 
 
