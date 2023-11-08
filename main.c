@@ -11,11 +11,15 @@ int main(int argc, char *argv[])
     double power;
     int i;
     int j;
+    int k;
+    int exponent;
 
     binaryString = argv[1];
     length = 0;
     isNegative = 0;
     j = 23;
+    k = 10;
+    exponent = 0;
 
     decimalValue = 0;
     power = 0.0;
@@ -37,6 +41,10 @@ int main(int argc, char *argv[])
 
     }
 
+    for (int i = 1; i <= 8; i++)
+    {
+        exponent = exponent * 2 + (binaryString[i] - '0');
+    }
     /*
 
     while (result != 0)
@@ -53,7 +61,8 @@ int main(int argc, char *argv[])
     }
     */
 
-    printf("%0.15f", power + 1);
+    printf("%0.15f\n", power + 1);
+    printf("%d\n", exponent - 127);
 
 
 
