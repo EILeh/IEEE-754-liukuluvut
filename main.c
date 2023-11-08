@@ -5,9 +5,6 @@
 int main(int argc, char *argv[])
 {
     char *binaryString;
-    int length;
-    int isNegative;
-    int decimalValue;
     double power;
     int i;
     int j;
@@ -16,13 +13,11 @@ int main(int argc, char *argv[])
     double a;
 
     binaryString = argv[1];
-    length = 0;
-    isNegative = 0;
+
     j = 23;
     k = 0.0;
     exponent = 0;
 
-    decimalValue = 0;
     power = 0.0;
     a = 0;
 
@@ -33,7 +28,6 @@ int main(int argc, char *argv[])
         {
             if (binaryString[i] == '1')
             {
-                /*decimalValue += power;*/
                 power += pow((0.5), j);
 
             }
@@ -43,30 +37,27 @@ int main(int argc, char *argv[])
 
     }
 
-    for (int i = 1; i <= 8; i++)
+    for (i = 1; i <= 8; i++)
     {
         exponent = exponent * 2 + (binaryString[i] - '0');
     }
-    /*
 
-    while (result != 0)
-    {
-        rem = result % 10;
-        if (j <= 23)
-        {
-            decimal += rem*weight;
-        }
 
-        result = result/10;
-        weight = weight * (1/2);
-        j++;
-    }
-    */
     exponent = exponent - 127;
 
     printf("%0.15f\n", power + 1);
     printf("%d\n", exponent);
-    if (exponent < 0)
+
+    if (binaryString[0] == '0')
+    {
+        printf("+\n");
+    }
+    else
+    {
+        printf("-\n");
+    }
+
+/*    if (exponent < 0)
     {
 
         printf("-\n");
@@ -74,10 +65,15 @@ int main(int argc, char *argv[])
     else
     {
         printf("+\n");
-    }
+    }*/
 
     a = pow(2, exponent);
-    k = exponent*(power+1)*a;
+    k = (power+1)*a;
+
+    if (binaryString[0] != '0')
+    {
+        printf("-");
+    }
 
     printf("%0.15f\n", k);
 
