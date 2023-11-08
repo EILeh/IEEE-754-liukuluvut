@@ -60,10 +60,19 @@ int main(int argc, char *argv[])
         j++;
     }
     */
+    exponent = exponent - 127;
 
     printf("%0.15f\n", power + 1);
-    printf("%d\n", exponent - 127);
+    printf("%d\n", exponent);
+    if (exponent < 0)
+    {
 
+        printf("-");
+    }
+    else
+    {
+        printf("+");
+    }
 
 
 
